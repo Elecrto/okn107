@@ -11,7 +11,7 @@ int kub() {
 int main() {
 	setlocale(LC_ALL, "rus");
 	srand(static_cast<unsigned int>(time(0)));
-	cout << "Ïåðâûé êóáèê: " << kub() << endl;
-	cout << "Âòîðîé êóáèê: " << kub();
+	cout << "ÐŸÐµÑ€Ð²Ñ‹Ð¹ ÐºÑƒÐ±: " << kub() << endl;
+	cout << "Ð’Ñ‚Ð¾Ñ€Ð¾Ð¹ ÐºÑƒÐ±: " << kub();
 	return 0;
 }
