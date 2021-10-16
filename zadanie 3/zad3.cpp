@@ -1,5 +1,4 @@
 #include<iostream>
-#include<cmath>
 using namespace std;
 
 void multip(int n,int i=2) {
@@ -26,7 +25,7 @@ int main() {
 		multip(n);
 	}
 	else {
-		cout << "Ââîäèòå íàòóðàëüíîå ÷èñëî!";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ñ‚ÑƒÑ€Ð°Ð»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾!";
 	}
 	return 0;
 }
