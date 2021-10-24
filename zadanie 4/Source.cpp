@@ -48,7 +48,7 @@ int main(){
 	setlocale(LC_ALL, "ru");
 	srand(static_cast<unsigned int>(time(0)));
 
-	cout << "1)Ââåäèòå ðàçìåð ìàññèâà, ïåðâûé ýëåìåíò è ðàçíîñòü:";
+	cout << "1)Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°, Ð¿ÐµÑ€Ð²Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¸ Ñ€Ð°Ð·Ð½Ð¾ÑÑ‚ÑŒ:";
 	int *A,N,a1, r;
 	cin >> N >> a1 >> r;
 	A= (int*)malloc(N * sizeof(int));
@@ -57,7 +57,7 @@ int main(){
 	print_arr(A, N);
 	cout << endl;
 
-	cout << "2)Ââåäèòå N:";
+	cout << "2)Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ N:";
 	int *B,n;
 	cin >> n;
 	B = (int*)malloc(n * sizeof(int));
@@ -68,11 +68,11 @@ int main(){
 	cout << endl;
 
 	int *C,m;
-	cout << "3)Ââåäèòå ðàçìåð ìàòèöû:";
+	cout << "3)Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°Ñ‚Ð¸Ñ†Ñ‹:";
 	cin >> m;
 	C = (int*)malloc(m * sizeof(int));
 	matrrand(m, C);
-	cout<< chet(C, m) << " ýëåìåíòîâ, ó êîòîðûõ ïðåäïîñëåäíÿÿ öèôðà ÷åòíàÿ" << endl;
+	cout<< chet(C, m) << " ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð², Ñƒ ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… Ð¿Ñ€ÐµÐ´Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÑÑ Ñ†Ð¸Ñ„Ñ€Ð° Ñ‡ÐµÑ‚Ð½Ð°Ñ" << endl;
 	print_arr(C, m);
 	return 0;
 }
