@@ -5,7 +5,7 @@ using namespace std;
 
 void print_arr(int a[], const int N) {
 	for (int i = 0; i != N; i++) {
-		cout << a[i]<<" ";
+		cout << a[i] << " ";
 	}
 }
 
@@ -16,7 +16,7 @@ int random(int N) {
 int main() {
 	setlocale(LC_ALL, "ru");
 	srand(static_cast<unsigned int>(time(0)));
-	const int N = 10;
+	const int N = 12;
 	int A[N];
 
 	for (int i = 0; i != N; i++) {
@@ -25,17 +25,11 @@ int main() {
 
 	print_arr(A, N);
 	cout << endl;
-	for (int i = 0; i < N/4; i++) {
-		int a = A[i];
-		A[i] = A[N/2 -i- 1];
-		A[N/2 - i - 1] = a;
+	for (int i = 0; i < N / 4; i++) {
+		swap(A[i] ,A[(N-1)/2 - i]);
+		swap(A[(N + 1) / 2 + i] , A[N - 1 - i]);
 	}
-	for (int i = N/2; i < 3*N / 4 ; i++) {
-		int a = A[i];
-		A[i] = A[N - i/2 + 1];
-		A[N - i/2 + 1] = a;
-	}
-	
+
 	print_arr(A, N);
 	return 0;
 }
