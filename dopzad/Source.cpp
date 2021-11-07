@@ -16,7 +16,7 @@ int random(int N) {
 int main() {
 	setlocale(LC_ALL, "ru");
 	srand(static_cast<unsigned int>(time(0)));
-	const int N = 12;
+	const int N = 10;
 	int A[N];
 
 	for (int i = 0; i != N; i++) {
