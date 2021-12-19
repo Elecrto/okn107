@@ -17,8 +17,8 @@ int main(){
     char* str = new char[256];
     cin >> str;
 
-    if (palindrom(str) == true) { cout << "Ïàëèíäğîì"; }
-    else { cout << "Íå ïàëèíäğîì"; }
+    if (palindrom(str) == true) { cout << "ĞŸĞ°Ğ»Ğ¸Ğ½Ğ´Ñ€Ğ¾Ğ¼"; }
+    else { cout << "!ĞŸĞ°Ğ»Ğ¸Ğ½Ğ´Ñ€Ğ¾Ğ¼"; }
     delete[] str;
     return 0;
 }
