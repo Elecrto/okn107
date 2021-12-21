@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 
 void vvod(int** a, int n, int m) {
@@ -168,7 +168,7 @@ void zad4()
 }
 
 void zad5() {
-    int n,c,i3,j3, m,mn=INT_MAX,mx=INT_MIN;
+    int n,c,i3,j3, m,mn=INT_MAX,mx=INT_MIN,mx2=INT_MIN;
     cout << "Задание 5:" << endl << "Введите размер матрицы:" << endl;
     cin >> n >> m;
     int** a = new int* [n];
@@ -181,19 +181,20 @@ void zad5() {
         if (a[0][j] > mx) { mx = a[0][j]; }
     }
     for (int i = 1; i != n; i++) {
+        mx2 = INT_MIN;
         for (int j = 0; j != m; j++) {
             if (a[i][j] < mn) { 
                 mn = a[i][j];
                 i3 = i;
                 j3 = j;
             }
-            if (a[i][j] > mx) {
-                c = a[i][j];
+            if (a[i][j] > mx2) {
+                mx2 = a[i][j];
             }
         }
         a[i3][j3] = mx;
         mn = INT_MAX;
-        mx = c;
+        mx = mx2;
     }
     cout << "Ответ:" << endl;
     vivod(a, n, m);
