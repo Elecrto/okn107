@@ -52,7 +52,7 @@ int main(){
     setlocale(LC_ALL, "ru");
     srand(time(NULL));
     int n, m;
-    cout << "Çàäàíèå 5:" << endl << "Ââåäèòå ðàçìåð ìàòðèöû:" << endl;
+    cout << "Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 5:" << endl << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹:" << endl;
     cin >> n >> m;
     int** a = new int* [n];
     for (int i = 0; i < n; i++)
@@ -60,7 +60,7 @@ int main(){
     vvod(a, n, m);
     vivod(a, n, m);
     change(a, n, m);
-    cout << "Îòâåò:" << endl;
+    cout << "ÐžÑ‚Ð²ÐµÑ‚:" << endl;
     vivod(a, n, m);
     del_matr(a, n);
 }
