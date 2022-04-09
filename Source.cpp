@@ -41,7 +41,7 @@ void Task(elem*& stack, string str) {
 	int c = 0;
 	for (int i = 0; i < str.length(); i++) {
 		if (close.find(str[i]) != -1 &&  peek(stack)==nullptr) {
-			cout << "Âûðàæåíèå íå èìååò ñìûëà, îøèáêà â "<<i<<" ñêîáêå";
+			cout << "Ð’Ñ‹Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð½Ðµ Ð¸Ð¼ÐµÐµÑ‚ ÑÑ‹Ð¼ÑÐ»Ð°, Ð¾ÑˆÐ¸Ð±ÐºÐ° Ð² "<<i<<" ÑÐºÐ¾Ð±ÐºÐµ";
 			return;
 		}
 		if (open.find(str[i]) != -1) {
@@ -55,10 +55,10 @@ void Task(elem*& stack, string str) {
 		}
 	}
 	if (peek(stack) == nullptr) {
-		cout << "Âûðàæåíèå âåðíî";
+		cout << "Ð’Ñ‹Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð²ÐµÑ€Ð½Ð¾";
 		return;
 	}
-	else { cout << "Âûðàæåíèå íå èìååò ñìûñëà, îøèáêà â "<<c << " ñêîáêå"; }
+	else { cout << "Ð’Ñ‹Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð½Ðµ Ð¸Ð¼ÐµÐµÑ‚ ÑÑ‹Ð¼ÑÐ»Ð°, Ð¾ÑˆÐ¸Ð±ÐºÐ° Ð² "<<c << " ÑÐºÐ¾Ð±ÐºÐµ"; }
 }
 
 int main() {
