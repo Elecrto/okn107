@@ -1,60 +1,74 @@
 #include<iostream>
-#include<fstream>
 #include<string>
 using namespace std;
 
-struct man {
-	char name[50];
-	int age;
-	int group;
+struct elem {
+	char value;
+	elem* next = nullptr;
 };
 
-int count_of_men(ifstream& fin) {
-	int count = 0;
-	while (!fin.eof()) {
-		string tmp;
-		getline(fin, tmp);
-		count++;
-	}
-	return count;
+void push(elem*& stack, char value) {
+	elem* newel = new elem;
+	newel->value = value;
+	newel->next = stack;
+	stack = newel;
 }
 
-int find_null(char* name) {
-	for (int i = 0; i < strlen(name); i++) {
-		if (name[i] == ' ') {
-			return i;
+bool pop(elem*& stack, char& value) {
+	if (!stack) { return false; }
+	value = stack->value;
+	stack = stack->next;
+	return true;
+}
+
+void clear(elem*& stack) {
+	if (!stack) { return; }
+	elem* newel = stack->next;
+	delete stack;
+	clear(newel);
+}
+
+char* peek(elem* stack) {
+	if (!stack) return nullptr;
+	return &stack->value;
+}
+
+void Task(elem*& stack, string str) {
+	elem* stack1 = stack;
+	string close = ")]}>";
+	string open = "([{<";
+	char val;
+	int c = 0;
+	for (int i = 0; i < str.length(); i++) {
+		if (close.find(str[i]) != -1 &&  peek(stack)==nullptr) {
+			cout << "Выражение не имеет смыла, ошибка в "<<i<<" скобке";
+			return;
+		}
+		if (open.find(str[i]) != -1) {
+			val = str[i];
+			push(stack, val);
+			c++;
+		}
+		else if (close.find(str[i]) != -1 && open.find(stack->value) == close.find(str[i])) {
+			pop(stack, val);
+			c++;
 		}
 	}
+	if (peek(stack) == nullptr) {
+		cout << "Выражение верно";
+		return;
+	}
+	else { cout << "Выражение не имеет смысла, ошибка в "<<c << " скобке"; }
 }
 
 int main() {
 	setlocale(LC_ALL, "ru");
-	ifstream fin("man.dat");
-	ofstream fout("man_out.dat");
-	if (!fin.is_open() || !fout.is_open()) {
-		cout << "error" << endl;
-		return 1;
-	}
-	man A = { "Oleg ", 18, 1};
-	char tmp[10];
-	fout.write((const char*)&A.name, sizeof(char) * (find_null(A.name)));
-	fout.write(" ", sizeof(char));
-	_itoa_s(A.age, tmp, 10);//Возраст(число) в строку
-	fout.write((const char*)&tmp, sizeof(char) * (find_null(tmp)));
-	fout.write(" ", sizeof(char));
-	_itoa_s(A.group, tmp, 10);
-	fout.write((const char*)&tmp, sizeof(char) * (find_null(tmp)));
-	fout.write("\n", sizeof(char));
-	//fin.seekg(0, ios_base::end);
-	//int x = fin.tellg();
-	//int count = count_of_men(x);
-	//fin.seekg(0, ios_base::beg);
-	//cout << count;
-	int count = count_of_men(fin);
-	cout << count;
-	while (fin.eof()) {
-		return 0;
-	}
-	fout.close();
-	fin.close();
+	elem* Stack = nullptr;
+	string str0 = "()({[[}})";
+	string str1 = "[{([[[<>]] ] )(<>)() {}}]";//true
+	string str2 = "]()(){<>} [[()]]";//false
+	string str3 = "[(sjd), '2'], {2:3}, [<>]";//true
+	string str4 = "{[[[[((()))]]<]()()>]}";//false
+	Task(Stack, str1);
+	clear(Stack);
 }
