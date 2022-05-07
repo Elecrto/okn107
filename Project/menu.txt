@@ -1,0 +1,3 @@
+MyPage.cgi Main
+SkobkiSite.cgi Task1
+CreditsSite.cgi Task2

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="15-02-22.css">
+	<title>MyPage</title>
+</head>
+<body>
+	<header>
+<!--#HEADER#-->
+	</header>
+	<main>
+		<div class="base">
+			<div class = "navg">
+				<nav class = "menu">
+					<ul>
+<!--#MENU#-->
+					</ul>
+				</nav>
+			</div>
+			
+<!--#CONTENT#-->
+
+		</div>
+	</main>
+	<footer>
+		<h2>Bye!</h2>
+	</footer>
+</body>
+</html>
